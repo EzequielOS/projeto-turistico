@@ -1,9 +1,12 @@
 package dominio;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
-public class Cliente {
+public class Cliente implements Serializable{
+	private static final long serialVersionUID = 1L;
 	private Integer codCliente;
 	private String nome;
 	private String email;
@@ -11,6 +14,7 @@ public class Cliente {
 	private String cpf;
 	private Date nascimento;
 	private BigDecimal rendaMensal;
+	private List<Contrato> contratos;
 
 	public Integer getCodCliente() {
 		return codCliente;
@@ -66,6 +70,14 @@ public class Cliente {
 
 	public void setRendaMensal(BigDecimal rendaMensal) {
 		this.rendaMensal = rendaMensal;
+	}
+
+	public List<Contrato> getContratos() {
+		return contratos;
+	}
+
+	public void setContratos(List<Contrato> contratos) {
+		this.contratos = contratos;
 	}
 
 	@Override

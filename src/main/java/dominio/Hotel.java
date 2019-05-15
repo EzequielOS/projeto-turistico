@@ -1,12 +1,16 @@
 package dominio;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.List;
 
-public class Hotel {
+public class Hotel implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private Integer codHotel;
 	private String nome;
 	private String cidade;
 	private BigDecimal diaria;
+	private List<Pacote> pacotes;
 
 	public Integer getCodHotel() {
 		return codHotel;
@@ -38,6 +42,14 @@ public class Hotel {
 
 	public void setDiaria(BigDecimal diaria) {
 		this.diaria = diaria;
+	}
+
+	public List<Pacote> getPacotes() {
+		return pacotes;
+	}
+
+	public void setPacotes(List<Pacote> pacotes) {
+		this.pacotes = pacotes;
 	}
 
 	@Override

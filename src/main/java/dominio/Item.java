@@ -1,8 +1,13 @@
 package dominio;
 
-public class Item {
+import java.io.Serializable;
+
+public class Item implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private Integer codItem;
 	private Integer ordem;
+	private Pacote pacote;
+	private Passeio passeio;
 
 	public Integer getCodItem() {
 		return codItem;
@@ -18,6 +23,22 @@ public class Item {
 
 	public void setOrdem(Integer ordem) {
 		this.ordem = ordem;
+	}
+
+	public Pacote getPacote() {
+		return pacote;
+	}
+
+	public void setPacote(Pacote pacote) {
+		this.pacote = pacote;
+	}
+
+	public Passeio getPasseio() {
+		return passeio;
+	}
+
+	public void setPasseio(Passeio passeio) {
+		this.passeio = passeio;
 	}
 
 	@Override

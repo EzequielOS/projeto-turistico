@@ -1,22 +1,47 @@
 package dominio;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Contrato {
+public class Contrato implements Serializable{
+	private static final long serialVersionUID = 1L;
 	private Integer codContrato;
 	private Date data;
+	private Cliente cliente;
+	private Pacote pacote;
+
+	public Pacote getPacote() {
+		return pacote;
+	}
+
+	public void setPacote(Pacote pacote) {
+		this.pacote = pacote;
+	}
+
 	public Integer getCodContrato() {
 		return codContrato;
 	}
+
 	public void setCodContrato(Integer codContrato) {
 		this.codContrato = codContrato;
 	}
+
 	public Date getData() {
 		return data;
 	}
+
 	public void setData(Date data) {
 		this.data = data;
 	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -24,6 +49,7 @@ public class Contrato {
 		result = prime * result + ((codContrato == null) ? 0 : codContrato.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -40,6 +66,5 @@ public class Contrato {
 			return false;
 		return true;
 	}
-	
-	
+
 }

@@ -1,12 +1,16 @@
 package dominio;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.List;
 
-public class Passeio {
+public class Passeio implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private Integer codPasseio;
 	private String nome;
 	private BigDecimal preco;
 	private String cidade;
+	private List<Item> itens;
 
 	public Integer getCodPasseio() {
 		return codPasseio;
@@ -38,6 +42,14 @@ public class Passeio {
 
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
+	}
+
+	public List<Item> getItens() {
+		return itens;
+	}
+
+	public void setItens(List<Item> itens) {
+		this.itens = itens;
 	}
 
 	@Override
